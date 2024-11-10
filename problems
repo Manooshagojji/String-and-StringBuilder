@@ -18,4 +18,48 @@ public class Main {
 ip-"aqua"
 op-0 2 3
 ------------------      --------------------------          -----------------------------------------------------------------
-                2Q
+                2Q comparing two strings
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        String s1=sc.next();
+        System.out.println(s.equals(s1));
+
+
+    }
+}
+ip-manusha 
+manusha
+op-true
+--------------------------------------------------------------------------------------------
+3Q-Searching Character
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        char ch=sc.next().charAt(0);
+        char arr[]=new char[n];
+        for(int i=0;i<arr.length;i++){
+            arr[i]=sc.next().charAt(0);
+        }
+        System.out.println(searchCharacter(arr,n,ch));
+}
+    public static String searchCharacter(char arr[],int n,char ch){
+        for(int i=0;i<n;i++){
+            char c=arr[i];
+            if(c>ch){
+                return c+"";
+            }
+        }
+        return "-1";
+}
+}
+ip-5
+c
+a b c d e
+op-d
+---------------------------------------------------------------------------------------------
+
