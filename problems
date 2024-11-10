@@ -62,4 +62,99 @@ c
 a b c d e
 op-d
 ---------------------------------------------------------------------------------------------
+4Q-check isogram or not
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        System.out.println(Isogram(s));
+    }
+    public static String Isogram(String s) {
+      int freq[]=new int[26];
+      for(int i=0;i<s.length();i++){
+          char ch=s.charAt(i);
+          int index=ch-'a';
+          freq[index]+=1;
+      }
+      for(int i=0;i<26;i++){
+          if(freq[i]>1){
+              return "Not an Isogram";
+          }
+      }
+      return "Isogram";
+    }
+}
+ip-machine
+op isogram
+ip-manusha
+op-not an isogram
+---------------------------------------------------------------------------
+5Q-first vowel occurence
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        char arr[]=new char[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.next().charAt(0);
+        }
+        System.out.println(vowelOccurance(arr,n));
+    }
+    public static int vowelOccurance(char arr[],int n) {
+        for(int i=0;i<n;i++){
+            if(checkVowel(arr[i])==true){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static boolean checkVowel(char ch){
+
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+                return true;
+            }
+            return false;
+    }
+}
+ip-5
+b c d e b
+op-3
+-------------------------------------------------------------------------------
+6Q-check anagram or not
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s1=sc.next();
+        String s2=sc.next();
+        System.out.println(checkAnagram(s1,s2));
+    }
+    public static String checkAnagram(String s,String s1){
+        int freq[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            int index=ch-'a';
+            freq[index]+=1;
+        }
+        for(int i=0;i<s1.length();i++){
+            char ch=s1.charAt(i);
+            int index=ch-'a';
+            freq[index]-=1;
+        }
+        for(int i=0;i<26;i++){
+            if(freq[i]==0){
+                return "Anagram";
+            }
+        }
+        return "not an anagaram";
+    }
+}
+ip-abccba
+   cbaabc
+op-anagram
+------------------------------------------------------------------
+7Q-
+
 
