@@ -155,6 +155,62 @@ ip-abccba
    cbaabc
 op-anagram
 ------------------------------------------------------------------
-7Q-
+7Q-Check pangram
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        System.out.println(checkPangram(s));
+    }
+    public static String checkPangram(String s){
+        int freq[]=new int[26];
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(ch!=' ') {
+                int index = ch - 'a';
+                freq[index] += 1;
+            }
+        }
+
+        for(int i=0;i<26;i++){
+            if(freq[i]!=0){
+                return "Panagram";
+            }
+        }
+        return "not an Panagaram";
+    }
+}
+ip-the quick brown fox jumps over the lazy dog
+op-pangram
+------------------------------------------------------
+8Q-toggle case
+mport java.util.*;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        System.out.println(toggleCase(s));
+    }
+
+    public static String toggleCase(String s) {
+        String ans = "";
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch >= 'A' && ch <= 'Z') {
+                ch = (char) (ch - 'A' + 'a');
+                ans += ch;
+            } else {
+                ch = (char) (ch - 'a' + 'A');
+                ans += ch;
+            }
+
+        }
+        return ans;
+    }
+}
+ip-mAnUsHa
+op-MaNuShA
 
 
